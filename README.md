@@ -1,6 +1,6 @@
 # Podcast Plus Website
 
-Website für Podcast Plus: Podcast-Studio und Equipment-Verleih in Zürich.
+Website für Podcast Plus: Podcast-Studio in Zürich mit drei Paketen (Aufnahme, Produktion, Rundum).
 
 ## Aufbau
 
@@ -14,6 +14,7 @@ Website für Podcast Plus: Podcast-Studio und Equipment-Verleih in Zürich.
 
 ## Noch offen
 
-- Echte Adresse, Telefon, E-Mail und Preise eintragen
+- Echte Adresse, Telefon und E-Mail eintragen
+- Preise der drei Pakete eintragen (in `index.html` bei `PLANS`, im Moment steht dort `price:null` = "Preis folgt")
 - Fotos für die Studio-Galerie und Video für den Studio-Rundgang
 - Formular an einen Dienst anbinden (z. B. Formspree), damit Anfragen ankommen

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Podcast Plus: Podcast-Studio und Equipment-Verleih in Zürich.">
+<meta name="description" content="Podcast Plus: Podcast-Studio in Zürich. Aufnahme, Schnitt und Social-Media-Betreuung aus einer Hand.">
 <title>Podcast Plus</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,9 +89,6 @@ section{padding-block:88px}
 
 /* Preise */
 .pricing{background:var(--soft)}
-.tabs{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:8px;padding:4px;gap:4px;margin-bottom:36px}
-.tabs button{border:0;background:none;padding:10px 18px;border-radius:6px;font:600 .92rem var(--sans);color:var(--muted);cursor:pointer}
-.tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
 .plan{background:#fff;border:1px solid var(--line);border-radius:12px;padding:30px 26px;display:flex;flex-direction:column;gap:18px;position:relative}
 .plan.hot{border:2px solid var(--navy);box-shadow:0 20px 40px -24px rgba(22,32,46,.4)}
@@ -103,6 +100,9 @@ section{padding-block:88px}
 .plan .price{margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}
 .plan .amount{font-size:2.1rem;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .plan .unit{color:var(--muted);font-size:.9rem}
+/* PLATZHALTER: markiert Preise, die noch fehlen */
+.todo{display:inline-block;background:#FFF3C4;color:#6B4E00;border:1.5px dashed #D9A400;border-radius:4px;padding:2px 8px;font:600 .85em var(--mono)}
+.plan .amount .todo{font-size:1.1rem}
 .price-note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:24px}
 @media (max-width:900px){.plans{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
 
@@ -214,10 +214,10 @@ footer{background:var(--navy);color:#fff;border-top:1px solid var(--navy-line);p
       <source src="media/hero.mp4" type="video/mp4">
     </video>
     <div class="wrap">
-      <h1>Euer Podcast.<span>Unser Equipment.</span></h1>
-      <p>Studio stundenweise mieten oder komplette Aufnahme-Sets mitnehmen. Getestet, eingestellt und bereit für die erste Folge.</p>
+      <h1>Euer Podcast.<span>Unser Studio.</span></h1>
+      <p>Nur aufnehmen, fertig geschnitten oder komplett mit Social Media: Ihr wählt, wie viel wir für euren Podcast übernehmen.</p>
       <div class="ctas">
-        <a class="btn btn-a" href="#preise">Preise ansehen
+        <a class="btn btn-a" href="#preise">Pakete ansehen
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <a class="btn btn-line" href="#kontakt">Beratung anfragen</a>
@@ -228,29 +228,29 @@ footer{background:var(--navy);color:#fff;border-top:1px solid var(--navy-line);p
   <section id="angebot" class="gutter">
     <div class="wrap">
       <div class="center-head">
-        <h2>Was ihr bei uns mieten könnt</h2>
-        <p>Vom einzelnen Mikrofon bis zum eingerichteten Studio mit drei Kameras</p>
+        <h2>Was wir für euch machen</h2>
+        <p>Von der Aufnahme im eigenen Studio bis zum fertigen Beitrag auf euren Kanälen</p>
       </div>
       <div class="services">
         <article class="service">
           <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg>
           <h3>Studio-Miete</h3>
-          <p>Schallbehandelter Raum mit Mikrofonen, Kameras und Licht. Stundenweise buchbar.</p>
-        </article>
-        <article class="service">
-          <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>
-          <h3>Equipment-Sets</h3>
-          <p>Fertige Koffer mit Mikrofonen, Mischpult und Kopfhörern zum Mitnehmen.</p>
+          <p>Schallbehandelter Raum mit Mikrofonen, Kameras und Licht. Ihr bekommt das Rohmaterial.</p>
         </article>
         <article class="service">
           <svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg>
           <h3>Video-Podcasts</h3>
-          <p>Multikamera-Aufnahme mit Licht und Bildregie. Ihr erhaltet alle Spuren einzeln.</p>
+          <p>Aufnahme mit drei Kameras und Licht. Ihr erhaltet alle Spuren einzeln.</p>
         </article>
         <article class="service">
           <svg viewBox="0 0 24 24"><path d="M3 12h2l2-6 3 12 3-9 2 5 2-2h4"/></svg>
-          <h3>Schnitt &amp; Mastering</h3>
-          <p>Wir schneiden eure Aufnahme und liefern sie fertig gemastert auf −16 LUFS.</p>
+          <h3>Professioneller Schnitt</h3>
+          <p>Wir schneiden eure Aufnahme und liefern eine fertige Folge, bereit zum Veröffentlichen.</p>
+        </article>
+        <article class="service">
+          <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 18h4M9.5 9.5l5 2.5-5 2.5z"/></svg>
+          <h3>Social-Media-Betreuung</h3>
+          <p>Wir machen aus jeder Folge Kurzclips und kümmern uns um eure Kanäle.</p>
         </article>
       </div>
     </div>
@@ -259,15 +259,11 @@ footer{background:var(--navy);color:#fff;border-top:1px solid var(--navy-line);p
   <section id="preise" class="pricing gutter">
     <div class="wrap">
       <div class="center-head">
-        <h2>Transparente Preise</h2>
-        <p>Studio pro Stunde oder Equipment pro Tag. Ohne Abo und ohne Mindestlaufzeit.</p>
-        <div class="tabs" role="tablist" aria-label="Preisart">
-          <button role="tab" id="tabStudio" aria-selected="true" aria-controls="plans">Studio pro Stunde</button>
-          <button role="tab" id="tabKits" aria-selected="false" aria-controls="plans">Equipment pro Tag</button>
-        </div>
+        <h2>Drei Pakete, ein Studio</h2>
+        <p>Ihr entscheidet, wie viel wir übernehmen: nur die Aufnahme, dazu den Schnitt oder auch eure Social-Media-Kanäle.</p>
       </div>
-      <div class="plans" id="plans" role="tabpanel"></div>
-      <p class="price-note">Alle Preise in CHF, exkl. MwSt. Für Equipment-Sets wird eine Kaution hinterlegt, die nach Rückgabe erstattet wird.</p>
+      <div class="plans" id="plans"></div>
+      <p class="price-note">Alle Preise in CHF, exkl. MwSt.</p>
     </div>
   </section>
 
@@ -303,8 +299,8 @@ footer{background:var(--navy);color:#fff;border-top:1px solid var(--navy-line);p
       <div class="steps">
         <div class="step"><span class="n">1</span><h3>Anfragen</h3><p>Paket und Termin wählen. Wir bestätigen die Verfügbarkeit innerhalb von 4 Stunden.</p></div>
         <div class="step"><span class="n">2</span><h3>Vorbereiten</h3><p>Ihr erhaltet eine Checkliste für eure Aufnahme und bei Bedarf ein kurzes Vorgespräch.</p></div>
-        <div class="step"><span class="n">3</span><h3>Aufnehmen</h3><p>Im Studio richten wir alles ein. Sets holt ihr ab oder lasst sie liefern.</p></div>
-        <div class="step"><span class="n">4</span><h3>Dateien erhalten</h3><p>Die Rohspuren kommen am selben Tag per Download-Link, geschnittene Folgen nach Absprache.</p></div>
+        <div class="step"><span class="n">3</span><h3>Aufnehmen</h3><p>Im Studio richten wir alles ein. Ihr setzt euch hin und redet, um die Technik kümmern wir uns.</p></div>
+        <div class="step"><span class="n">4</span><h3>Dateien erhalten</h3><p>Das Rohmaterial kommt am selben Tag per Download-Link. Geschnittene Folgen und Clips nach Absprache.</p></div>
       </div>
     </div>
   </section>
@@ -315,12 +311,13 @@ footer{background:var(--navy);color:#fff;border-top:1px solid var(--navy-line);p
         <h2>Häufige Fragen</h2>
       </div>
       <div class="faq">
-        <details><summary>Brauche ich Erfahrung mit Technik?</summary><p>Nein. Im Studio ist immer jemand von uns dabei. Die Sets zum Mitnehmen sind vorkonfiguriert und haben eine bebilderte Kurzanleitung.</p></details>
+        <details><summary>Brauche ich Erfahrung mit Technik?</summary><p>Nein. Im Studio ist immer jemand von uns dabei und kümmert sich um Mikrofone, Kameras und Licht.</p></details>
         <details><summary>Wie lange im Voraus sollte ich buchen?</summary><p>Unter der Woche sind Termine oft schon am nächsten Tag frei. Für Samstage empfehlen wir etwa zwei Wochen Vorlauf.</p></details>
         <details><summary>Kann ich das Studio vorher besichtigen?</summary><p>Ja. Schreibt uns kurz, dann vereinbaren wir einen Termin von etwa 15 Minuten.</p></details>
         <details><summary>In welchem Format bekomme ich die Aufnahmen?</summary><p>Audio als WAV mit 48 kHz und 24 bit, jede Person auf einer eigenen Spur. Video als MP4 in 4K pro Kamera.</p></details>
-        <details><summary>Wie funktioniert die Kaution?</summary><p>Für Equipment-Sets hinterlegt ihr bei Abholung eine Kaution. Nach der Rückgabe prüfen wir alles und erstatten sie innerhalb von 3 Werktagen.</p></details>
-        <details><summary>Kann ich stornieren?</summary><p>Bis 48 Stunden vor dem Termin kostenlos. Danach berechnen wir 50 % der ersten Stunde oder des ersten Miettags.</p></details>
+        <details><summary>Kann ich das Equipment auch ausleihen?</summary><p>Nein, unser Equipment vermieten wir nicht. Ihr nehmt bei uns im Studio auf, wir sind dabei und kümmern uns um die Technik.</p></details>
+        <details><summary>Welches Paket passt zu uns?</summary><p>Wenn ihr selbst schneiden wollt, reicht das Paket Aufnahme. Soll die Folge fertig zu euch kommen, nehmt Produktion. Wenn ihr euch auch nicht um Instagram, TikTok und Co. kümmern wollt, ist Rundum das richtige Paket.</p></details>
+        <details><summary>Kann ich stornieren?</summary><p>Bis 48 Stunden vor dem Termin kostenlos. Danach berechnen wir 50 % der ersten Stunde.</p></details>
       </div>
     </div>
   </section>
@@ -346,7 +343,7 @@ footer{background:var(--navy);color:#fff;border-top:1px solid var(--navy-line);p
             <label for="date">Wunschtermin
               <input type="date" id="date">
             </label>
-            <label for="qty"><span id="qtyLabel">Stunden</span>
+            <label for="qty">Aufnahmedauer (Stunden)
               <input type="number" id="qty" min="1" max="30" value="2">
             </label>
           </div>
@@ -359,9 +356,9 @@ footer{background:var(--navy);color:#fff;border-top:1px solid var(--navy-line);p
             </label>
           </div>
           <label for="msg">Worum geht es? (optional)
-            <textarea id="msg" placeholder="z. B. Anzahl Gäste, Video ja/nein, Schnitt gewünscht"></textarea>
+            <textarea id="msg" placeholder="z. B. Anzahl Gäste, Video ja/nein, wie viele Folgen"></textarea>
           </label>
-          <p style="font-size:.92rem">Geschätzter Preis: <b id="est">–</b></p>
+          <p style="font-size:.92rem">Preis: <b id="est">–</b></p>
           <p class="err" id="err" hidden></p>
           <button class="btn btn-a" type="submit" style="justify-self:start">Anfrage senden</button>
         </form>
@@ -386,10 +383,10 @@ footer{background:var(--navy);color:#fff;border-top:1px solid var(--navy-line);p
     <div class="foot">
       <div>
         <a class="logo" href="#top" aria-label="Podcast Plus Startseite" style="margin-bottom:14px"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="var(--accent)"/><rect x="13" y="7" width="10" height="15" rx="5" fill="var(--navy)"/><path d="M9.5 17.5a8.5 8.5 0 0 0 17 0M18 26v3.5" fill="none" stroke="var(--navy)" stroke-width="2.4" stroke-linecap="round"/><path d="M27 4.5v7M23.5 8h7" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg><span class="wm">PODCAST<b>PLUS</b></span></a>
-        <p>Podcast-Studio und Equipment-Verleih in Zürich</p>
+        <p>Podcast-Studio, Schnitt und Social Media in Zürich</p>
       </div>
       <div><h4>Adresse</h4><p>Musterstrasse 12<br>8000 Zürich<br>Schweiz</p></div>
-      <div><h4>Angebot</h4><ul><li><a href="#preise">Studio-Miete</a></li><li><a href="#preise">Equipment-Sets</a></li><li><a href="#angebot">Video-Podcasts</a></li><li><a href="#angebot">Schnitt &amp; Mastering</a></li></ul></div>
+      <div><h4>Angebot</h4><ul><li><a href="#preise">Paket Aufnahme</a></li><li><a href="#preise">Paket Produktion</a></li><li><a href="#preise">Paket Rundum</a></li></ul></div>
       <div><h4>Kontakt</h4><ul><li>044 000 00 00</li><li>hallo@podcastplus.example</li></ul></div>
     </div>
     <p class="copyline">© 2026 Podcast Plus. Alle Rechte vorbehalten.</p>
@@ -402,55 +399,44 @@ footer{background:var(--navy);color:#fff;border-top:1px solid var(--navy-line);p
 </a>
 
 <script>
-const PLANS={
-  studio:[
-    {id:"audio",name:"Audio",sub:"Gespräche mit 2–4 Personen",price:120,unit:"pro Stunde",items:["Schallbehandelter Studioraum","Bis zu 4 × Shure SM7B","Betreuung durch Toningenieur","Einzelspuren als WAV am selben Tag"]},
-    {id:"video",name:"Video",sub:"Für YouTube, Spotify und Social Media",price:290,unit:"pro Stunde",hot:true,items:["Alles aus dem Audio-Paket","3 Kameras in 4K inkl. Weitwinkel","Professionelles Licht","Rohdateien pro Kamera per Download"]},
-    {id:"produktion",name:"Produktion",sub:"Aufnahme plus fertige Folge",price:490,unit:"pro Stunde",items:["Alles aus dem Video-Paket","Schnitt und Farbkorrektur","Mastering auf −16 LUFS","3 Kurzclips für Social Media"]}
-  ],
-  kits:[
-    {id:"solo",name:"Set Solo",sub:"Für eine Person, auch unterwegs",price:45,unit:"pro Tag",items:["1 × Røde PodMic USB","Zoom PodTrak P4 Recorder","Kopfhörer DT 770 Pro","Kaution CHF 200"]},
-    {id:"duo",name:"Set Duo",sub:"Der Klassiker für zwei",price:85,unit:"pro Tag",hot:true,items:["2 × Shure SM7B mit Mikrofonarmen","RØDECaster Pro II","2 × Kopfhörer DT 770 Pro","Kaution CHF 400"]},
-    {id:"runde",name:"Set Runde",sub:"Talkrunden bis 4 Personen",price:125,unit:"pro Tag",items:["4 × Shure SM7B mit Mikrofonarmen","RØDECaster Pro II","4 × Kopfhörer und Verstärker","Kaution CHF 600"]}
-  ]
-};
+// PLATZHALTER: price:null heisst "Preis fehlt noch". Sobald die Preise feststehen,
+// hier die Zahl eintragen (z. B. price:120) und bei unit die Einheit anpassen.
+const PLANS=[
+  {id:"aufnahme",name:"Aufnahme",sub:"Studio mieten, Rohmaterial erhalten",price:null,unit:"pro Stunde",perHour:true,items:["Schallbehandelter Studioraum","Mikrofone, 3 Kameras in 4K und Licht","Betreuung durch uns während der Aufnahme","Rohmaterial am selben Tag per Download"]},
+  {id:"produktion",name:"Produktion",sub:"Wir schneiden euren Podcast professionell",price:null,unit:"pro Folge",hot:true,items:["Alles aus dem Paket Aufnahme","Professioneller Schnitt von Audio und Video","Sauberer Klang und Farbkorrektur","Fertige Folge, bereit zum Veröffentlichen"]},
+  {id:"rundum",name:"Rundum",sub:"Dazu die ganze Social-Media-Betreuung",price:null,unit:"pro Monat",items:["Alles aus dem Paket Produktion","Kurzclips aus jeder Folge","Beiträge planen und veröffentlichen","Betreuung eurer Social-Media-Kanäle"]}
+];
 const chf=n=>"CHF "+n.toLocaleString("de-CH");
+const TODO='<span class="todo">Preis folgt</span>';
 const plansEl=document.getElementById("plans"),pkg=document.getElementById("pkg");
-const ALL=[...PLANS.studio.map(p=>({...p,kind:"studio"})),...PLANS.kits.map(p=>({...p,kind:"kits"}))];
 
-function renderPlans(kind){
-  plansEl.innerHTML=PLANS[kind].map(p=>`
+plansEl.innerHTML=PLANS.map(p=>`
     <article class="plan${p.hot?" hot":""}">
       ${p.hot?'<span class="badge">Beliebteste Wahl</span>':""}
       <div><h3>${p.name}</h3><p class="sub">${p.sub}</p></div>
       <ul>${p.items.map(i=>`<li><svg viewBox="0 0 24 24"><use href="#check"/></svg><span>${i}</span></li>`).join("")}</ul>
-      <div class="price"><div class="amount">${chf(p.price)}</div><div class="unit">${p.unit}</div></div>
+      <div class="price"><div class="amount">${p.price==null?TODO:chf(p.price)}</div><div class="unit">${p.unit}</div></div>
       <a class="btn ${p.hot?"btn-dark":"btn-outline"}" href="#kontakt" data-pick="${p.id}">Jetzt anfragen</a>
     </article>`).join("");
-  document.getElementById("tabStudio").setAttribute("aria-selected",kind==="studio");
-  document.getElementById("tabKits").setAttribute("aria-selected",kind==="kits");
-}
-document.getElementById("tabStudio").onclick=()=>renderPlans("studio");
-document.getElementById("tabKits").onclick=()=>renderPlans("kits");
-renderPlans("studio");
 plansEl.addEventListener("click",e=>{const a=e.target.closest("[data-pick]");if(a){pkg.value=a.dataset.pick;estimate()}});
 
-pkg.innerHTML=`<optgroup label="Studio pro Stunde">${PLANS.studio.map(p=>`<option value="${p.id}">${p.name} · ${chf(p.price)} / Std.</option>`).join("")}</optgroup>
-<optgroup label="Equipment pro Tag">${PLANS.kits.map(p=>`<option value="${p.id}">${p.name} · ${chf(p.price)} / Tag</option>`).join("")}</optgroup>`;
-pkg.value="video";
+pkg.innerHTML=PLANS.map(p=>`<option value="${p.id}">${p.name} · ${p.sub}</option>`).join("");
+pkg.value="produktion";
 
 const dateEl=document.getElementById("date");
 const d=new Date();d.setDate(d.getDate()+3);
 dateEl.value=d.toISOString().slice(0,10);dateEl.min=new Date().toISOString().slice(0,10);
 
+// Gibt Text zurück; im Formular als HTML (mit Platzhalter-Markierung), in der Anfrage als reiner Text
 function estimate(){
-  const p=ALL.find(x=>x.id===pkg.value);
+  const p=PLANS.find(x=>x.id===pkg.value);
   const q=Math.min(30,Math.max(1,parseInt(document.getElementById("qty").value)||1));
-  document.getElementById("qtyLabel").textContent=p.kind==="studio"?"Stunden":"Miettage";
-  let total=p.price*q, note="";
-  if(p.kind==="kits"&&q>=3){total=Math.round(total*.85);note=" (15 % Rabatt ab 3 Tagen)"}
-  document.getElementById("est").textContent=chf(total)+" exkl. MwSt."+note;
-  return {p,q,total,note};
+  let html,text;
+  if(p.price==null){html=TODO;text="Preis folgt"}
+  else if(p.perHour){text=chf(p.price*q)+" exkl. MwSt.";html=text}
+  else{text=chf(p.price)+" "+p.unit+" exkl. MwSt.";html=text}
+  document.getElementById("est").innerHTML=html;
+  return {p,q,text};
 }
 document.getElementById("bookForm").addEventListener("input",estimate);
 estimate();
@@ -463,9 +449,9 @@ document.getElementById("bookForm").addEventListener("submit",e=>{
   if(!/^\S+@\S+\.\S+$/.test(email))probs.push("Bitte gib eine gültige E-Mail-Adresse an, damit wir antworten können.");
   if(probs.length){err.textContent=probs.join(" ");err.hidden=false;return}
   err.hidden=true;
-  const {p,q,total,note}=estimate(),msg=document.getElementById("msg").value.trim();
+  const {p,q,text:est}=estimate(),msg=document.getElementById("msg").value.trim();
   const when=new Date(dateEl.value+"T12:00").toLocaleDateString("de-CH",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
-  const text=`Anfrage Podcast Plus\nName: ${name}\nE-Mail: ${email}\nPaket: ${p.name}\nTermin: ${when}\n${p.kind==="studio"?"Stunden":"Miettage"}: ${q}\nGeschätzt: ${chf(total)} exkl. MwSt.${note}`+(msg?`\nNachricht: ${msg}`:"");
+  const text=`Anfrage Podcast Plus\nName: ${name}\nE-Mail: ${email}\nPaket: ${p.name} (${p.sub})\nTermin: ${when}\nAufnahmedauer: ${q} Std.\nPreis: ${est}`+(msg?`\nNachricht: ${msg}`:"");
   const area=document.getElementById("formArea");
   area.innerHTML=`<form class="done" onsubmit="return false"><h3>Danke! Deine Anfrage ist vorbereitet.</h3><p style="color:var(--muted)">Wir melden uns innerhalb von 4 Stunden per E-Mail.</p><pre id="reqText"></pre><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-a" type="button" id="cp">Anfrage kopieren</button><button class="btn btn-outline" type="button" onclick="location.reload()">Neue Anfrage</button></div></form>`;
   document.getElementById("reqText").textContent=text;
