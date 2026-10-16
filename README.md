@@ -1,6 +1,6 @@
 # Podcast Plus Website
 
-Website für Podcast Plus: Podcast-Studio in Zürich mit drei Paketen (Aufnahme, Produktion, Rundum).
+Website für Podcast Plus: Podcast-Studio in Feuerthalen mit drei Paketen (Aufnahme, Produktion, Rundum).
 
 ## Aufbau
 
@@ -14,7 +14,6 @@ Website für Podcast Plus: Podcast-Studio in Zürich mit drei Paketen (Aufnahme,
 
 ## Noch offen
 
-- Echte Adresse, Telefon und E-Mail eintragen
-- Preise der drei Pakete eintragen (in `index.html` bei `PLANS`, im Moment steht dort `price:null` = "Preis folgt")
+- Echte E-Mail-Adresse eintragen
 - Fotos für die Studio-Galerie und Video für den Studio-Rundgang
 - Formular an einen Dienst anbinden (z. B. Formspree), damit Anfragen ankommen
