@@ -7,6 +7,7 @@ Website für Podcast Plus: Podcast-Studio in Feuerthalen mit drei Paketen (Aufna
 - `index.html`: die komplette Seite (HTML, CSS und JavaScript in einer Datei)
 - `media/hero.mp4`: Hero-Video (36 Sekunden, ohne Ton)
 - `media/hero-poster.jpg`: Standbild, bis das Video geladen ist
+- `media/studio-1.jpg` bis `studio-6.jpg`: Fotos aus dem Studio
 
 ## Lokal ansehen
 
@@ -15,5 +16,4 @@ Website für Podcast Plus: Podcast-Studio in Feuerthalen mit drei Paketen (Aufna
 ## Noch offen
 
 - Echte E-Mail-Adresse eintragen
-- Fotos für die Studio-Galerie und Video für den Studio-Rundgang
 - Formular an einen Dienst anbinden (z. B. Formspree), damit Anfragen ankommen
