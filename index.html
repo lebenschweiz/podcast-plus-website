@@ -11,8 +11,8 @@
 <style>
 /* Bewusst ein festes Erscheinungsbild (dunkle Bänder, helle Inhaltsflächen), wie die Vorlage. */
 :root{
-  --navy:#16202E; --navy-2:#1E2B3C; --navy-line:#2C3B4F;
-  --accent:#2EDB7F; --accent-ink:#0B2A1A;
+  --navy:#12302A; --navy-2:#1B4038; --navy-line:#285247;
+  --accent:#C9A55C; --accent-ink:#231A08;
   --bg:#FFFFFF; --soft:#F3F5F8; --ink:#141B24; --muted:#5B6675; --line:#E1E5EB;
   --sans:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
@@ -63,10 +63,10 @@ a{color:inherit}
 .hero{position:relative;min-height:min(640px,86vh);display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--navy)}
 .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero .poster{background:
-  radial-gradient(ellipse 60% 70% at 70% 60%,rgba(46,219,127,.12),transparent 60%),
-  repeating-linear-gradient(90deg,#253347 0 14px,#1E2B3C 14px 28px);
+  radial-gradient(ellipse 60% 70% at 70% 60%,rgba(201,165,92,.12),transparent 60%),
+  repeating-linear-gradient(90deg,#1F4A40 0 14px,#1B4038 14px 28px);
 }
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,24,35,.88) 0%,rgba(16,24,35,.55) 55%,rgba(16,24,35,.25) 100%),linear-gradient(0deg,rgba(255,255,255,.9) 0%,transparent 22%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,40,34,.88) 0%,rgba(14,40,34,.55) 55%,rgba(14,40,34,.25) 100%),linear-gradient(0deg,rgba(255,255,255,.9) 0%,transparent 22%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-block:72px 110px}
 .hero h1{font-size:clamp(2.6rem,6.4vw,5rem);letter-spacing:-.035em}
 .hero h1 span{display:block;color:var(--accent)}
