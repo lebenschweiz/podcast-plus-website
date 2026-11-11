@@ -15,8 +15,11 @@ Website für Podcast Plus: Podcast-Studio in Feuerthalen mit drei Paketen (Aufna
 
 `index.html` im Browser öffnen.
 
+## Formular
+
+Anfragen gehen über [FormSubmit](https://formsubmit.co) direkt an die Adresse in `MAIL` (index.html). Beim allerersten Absenden schickt FormSubmit eine Bestätigungs-Mail an diese Adresse; erst nach dem Klick auf den Link darin kommen Anfragen an. Wird die Adresse geändert, muss sie erneut bestätigt werden. Klappt das Senden nicht, öffnet sich als Ausweichweg das E-Mail-Programm.
+
 ## Noch offen
 
-- Formular an einen Dienst anbinden (z. B. Formspree). Bis dahin öffnet das Formular das E-Mail-Programm mit der fertigen Anfrage an johartung@mail.ch.
 - Impressum und Datenschutzerklärung ergänzen
 - Sobald die Domain feststeht: Vorschaubild (`og:image`) als vollständige Adresse eintragen

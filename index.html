@@ -381,7 +381,8 @@ footer{background:var(--navy);color:#fff;border-top:1px solid var(--navy-line);p
             <textarea id="msg" placeholder="z. B. Anzahl Gäste, Video ja/nein, wie viele Folgen"></textarea>
           </label>
           <p class="err" id="err" role="alert" hidden></p>
-          <button class="btn btn-a" type="submit" style="justify-self:start">Anfrage senden</button>
+          <input type="text" name="_honey" id="honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+          <button class="btn btn-a" type="submit" id="sendBtn" style="justify-self:start">Anfrage senden</button>
         </form>
       </div>
     </div>
@@ -449,7 +450,10 @@ const dateEl=document.getElementById("date");
 const d=new Date();d.setDate(d.getDate()+3);
 dateEl.value=d.toISOString().slice(0,10);dateEl.min=new Date().toISOString().slice(0,10);
 
-document.getElementById("bookForm").addEventListener("submit",e=>{
+// Anfragen werden über FormSubmit (formsubmit.co) direkt an MAIL geschickt.
+// Klappt das nicht (z. B. offline), öffnet sich als Ausweichweg das E-Mail-Programm.
+const FORM_ENDPOINT=`https://formsubmit.co/ajax/${MAIL}`;
+document.getElementById("bookForm").addEventListener("submit",async e=>{
   e.preventDefault();
   const name=document.getElementById("name").value.trim(),email=document.getElementById("email").value.trim(),err=document.getElementById("err");
   const probs=[];
@@ -465,8 +469,22 @@ document.getElementById("bookForm").addEventListener("submit",e=>{
   const text=`Anfrage Podcast Plus\nName: ${name}\nE-Mail: ${email}\n`+(visit?`Anliegen: Studio-Besichtigung\nWunschtermin: ${when}`:`Paket: ${p.name} (${p.sub})\nTermin: ${when}\nAufnahmedauer: ${q} Std.`)+(msg?`\nNachricht: ${msg}`:"");
   const subject=visit?`Besichtigung Podcast Plus: ${name}`:`Anfrage ${p.name}: ${name}`;
   const mailto=`mailto:${MAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
-  const area=document.getElementById("formArea");
-  area.innerHTML=`<form class="done" onsubmit="return false"><h3 tabindex="-1" id="doneHead">Fast geschafft: Bitte die E-Mail noch absenden.</h3><p style="color:var(--muted)">Euer E-Mail-Programm öffnet sich mit der fertigen Anfrage. Klickt dort auf «Senden», dann melden wir uns so schnell wie möglich. Falls sich nichts öffnet, kopiert die Anfrage und schickt sie an <a href="mailto:${MAIL}">${MAIL}</a>.</p><pre id="reqText"></pre><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-a" id="mailBtn">E-Mail öffnen</a><button class="btn btn-outline" type="button" id="cp">Anfrage kopieren</button><button class="btn btn-outline" type="button" onclick="location.reload()">Neue Anfrage</button></div></form>`;
+  const area=document.getElementById("formArea"),sendBtn=document.getElementById("sendBtn");
+  if(document.getElementById("honey").value)return;
+  sendBtn.disabled=true;sendBtn.textContent="Wird gesendet …";
+  try{
+    const res=await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
+      body:JSON.stringify({_subject:subject,_replyto:email,_template:"table",_captcha:"false",
+        Name:name,"E-Mail":email,Anliegen:visit?"Studio-Besichtigung":`Paket ${p.name}`,Wunschtermin:when,
+        Aufnahmedauer:visit?"–":`${q} Std.`,Nachricht:msg||"–"})});
+    const data=await res.json().catch(()=>({}));
+    if(res.ok&&String(data.success)==="true"){
+      area.innerHTML=`<div class="done" role="status"><h3 tabindex="-1" id="doneHead">Danke, eure Anfrage ist angekommen!</h3><p style="color:var(--muted)">Wir melden uns so schnell wie möglich per E-Mail bei euch.</p><div><button class="btn btn-outline" type="button" onclick="location.reload()">Neue Anfrage</button></div></div>`;
+      document.getElementById("doneHead").focus();
+      return;
+    }
+  }catch{}
+  area.innerHTML=`<form class="done" onsubmit="return false"><h3 tabindex="-1" id="doneHead">Fast geschafft: Bitte die E-Mail noch absenden.</h3><p style="color:var(--muted)">Das direkte Senden hat gerade nicht geklappt. Euer E-Mail-Programm öffnet sich deshalb mit der fertigen Anfrage. Klickt dort auf «Senden», dann melden wir uns so schnell wie möglich. Falls sich nichts öffnet, kopiert die Anfrage und schickt sie an <a href="mailto:${MAIL}">${MAIL}</a>.</p><pre id="reqText"></pre><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-a" id="mailBtn">E-Mail öffnen</a><button class="btn btn-outline" type="button" id="cp">Anfrage kopieren</button><button class="btn btn-outline" type="button" onclick="location.reload()">Neue Anfrage</button></div></form>`;
   document.getElementById("reqText").textContent=text;
   document.getElementById("mailBtn").href=mailto;
   document.getElementById("doneHead").focus();
